@@ -1,0 +1,8 @@
+比起float有些时候用display: inline-block;会显得更加简洁而且更加安全。
+box{
+  display: inline-block;
+}
+如果你还需要兼容ie7
+box{
+  *display:inline;
+}
