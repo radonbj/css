@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>css实验</title>
+  <style>
+    .box1{
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      padding: 10px;
+      border: 3px solid #ccc;
+      background: #111;
+    }
+    .box2{
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      padding: 10px;
+      border: 3px solid #ccc;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      background: #111;
+    }
+    .box3{
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      padding: 10px;
+      border: 3px solid #ccc;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      background: #111;
+    }  
+  </style>
+</head>
+<body>
+  <p>box-sizing</p>
+  <div class="box1"></div>
+  <div class="box2">在宽度和高度之外绘制元素的内边距和边框。兼容ie8+</div>
+  <div class="box3">在宽度和高度之内绘制元素的内边距和边框。</div>  
+</body>
+</html>
+
+可以将{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}应用到清除块级元素的默认样式，支持ie8+，移动端支持良好。
