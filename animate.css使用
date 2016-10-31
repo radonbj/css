@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="animate.css" />
+    <style type="text/css">
+      p{
+          font-size: 54px;
+          color: #435859;
+          font-weight: bold;
+          text-align: center;
+          margin-top: 200px;
+      }
+    </style>
+</head>
+<body>
+        <p class="animated flash">Animate</p>
+        <script src="jquery-3.1.1.min.js"></script>
+        <script>
+        $.fn.extend({//animateCss绑定到jquery
+            animateCss: function (animationName) {
+                var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                this.addClass('animated ' + animationName).one(animationEnd, function() {
+                    $(this).removeClass('animated ' + animationName);
+                });
+            }
+        });
+        (function(){
+            //$('p').animateCss('bounce');
+            //$('p').animateCss('flash');
+            //$('p').addClass('animated pulse');
+        })();
+        </script>
+</body>
+</html>
+这里提供了三种操作方法：
+一：直接将class写入行间
+        <p class="animated flash">Animate</p>
+
+二：animate提供的绑定方法，只需将下面的js放入jquery文件就行了，绑定需要的class$('p').animateCss('flash');
+        $.fn.extend({//animateCss绑定到jquery
+                    animateCss: function (animationName) {
+                        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                        this.addClass('animated ' + animationName).one(animationEnd, function() {
+                            $(this).removeClass('animated ' + animationName);
+                        });
+                    }
+                });
+                
+三：使用addClass绑定class，这样操作注意需要加上animated基础样式，而上面的不需要
+           $('p').addClass('animated pulse');
