@@ -1,0 +1,16 @@
+margin取值为百分比时，百分比的计算以父级的宽度为基准，与高度无关。
+
+绝对定位元素的margin是相对于第一个定位的祖先元素的宽度计算的。
+
+margin重叠发生在块级元素的上下边距。
+
+清除margin重叠：margin分为margin-top/margin-bottom重叠，清除margin-top和margin-bottom相似。下面说明清除重叠margin-top，有四种四种方法；
+一、父经添加overflow:hidden;
+二、父天padding-top;
+三、border-top;
+四、在当前元素前添加行内元素；
+
+margin垂直居中的两种方案：
+一、父元素writing-mode:vertical-lr;子元素margin:auto;此时无法水平居中；
+
+二、父元素相对定位，子元素绝对定位，left/right/top/bottom为0，设置宽高，margin:auto;这种方法不兼容ie8-。
