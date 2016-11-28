@@ -50,3 +50,4 @@
                 
 三：使用addClass绑定class，这样操作注意需要加上animated基础样式，而上面的不需要
            $('p').addClass('animated pulse');
+           
