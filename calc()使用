@@ -1,0 +1,30 @@
+简介：
+    calc()从字面我们可以把他理解为一个函数function。其实calc是英文单词calculate(计算)的缩写，是css3的一个新增的功能，用来指定元素的长度。比如说，
+    你可以使用calc()给元素的border、margin、pading、font-size和width等属性设置动态值。为何说是动态值呢?因为我们使用的表达式来得到的值。不过calc()
+    最大的好处就是用在流体布局上，可以通过calc()计算得到元素的宽度。
+    
+作用：
+  calc()能让你给元素的做计算，你可以给一个div元素，使用百分比、em、px和rem单位值计算出其宽度或者高度，比如说“width:calc(50% + 2em)”，这样一来你
+  就不用考虑元素DIV的宽度值到底是多少，而把这个烦人的任务交由浏览器去计算。
+    
+语法：
+    calc()语法非常简单，就像我们小时候学加 （+）、减（-）、乘（*）、除（/）一样，使用数学表达式来表示：width: calc(expression);expression为一个表达式；
+    
+使用：
+  <div class="div">
+		<div></div>
+	</div>
+  .div{
+			width: 500px;			
+			height: 100px;
+			background: #ccc;
+		}
+		.div div{
+			width: calc(100% - (10px + 1px) * 2);
+			border: 10px;
+			padding: 10px;
+			height: calc(100% - (10px + 1px) * 2);
+			background: red;
+		}
+    
+    如上例中所示，便不用再担心子元素会撑破父元素。
