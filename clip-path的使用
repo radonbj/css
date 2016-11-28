@@ -1,0 +1,25 @@
+简介：
+clip-path：clip-path用来绘制裁剪路径，不错的是浏览器不会捕获元素裁剪区域以外的 hover、click 等事件。
+
+作用：
+可以创建圆形、椭圆、多边形等许许多多不同的形状。
+
+语法：
+clip-path: <clip-source> | [ <basic-shape> || <geometry-box> ] | none；
+其默认值是none。另外简单介绍clip-path几个属性值：
+
+clip-source: 可以是内、外部的SVG的<clipPath>元素的URL引用
+basic-shape: 使用一些基本的形状函数创建的一个形状。主要包括circle()、ellipse()、inset()和polygon()。具体的说明可以看CSS Shapes中有关于说明。
+             另外在CSS Shapes 101一文中也有详细介绍。
+geometry-box: 是可选参数。此参数和basic-shape函数一起使用时，可以为basic-shape的裁剪工作提供参考盒子。如果geometry-box由自身指定，
+              那么它会使用指定盒子形状作为裁剪的路径，包括任何(由border-radius提供的)的角的形状。
+              
+示例：
+    使用polygon（）绘制菱形：clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);//括弧中的数字为剪裁的坐标，坐标以‘，’作为分隔，坐标值可以是具体的数值或百分比，写成百分比那么元素必须要有具体的值；
+    使用polygon（）绘制三角形：clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    使用polygon（）绘制星形：clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    使用circle（）绘制圆：clip-path: circle(50% at 50% 50%);//绘制圆的元素必须是正方形的，绘制圆需要三个值（圆心坐标（X/Y），半径），第一个值对应半径，
+            50%为取元素的宽高值的一半作为剪切半径，再使用关键词at来定义圆心的x和y坐标。
+    使用ellipse（）绘制椭圆形：clip-path: ellipse(30% 20% at 50% 50%);//绘制椭圆需要提供4个值，分别是（X/Y）轴的半径和椭圆的坐标；
+    使用Inset（）绘制圆角：clip-path: inset(25% 0 round 0 25%);
+        
