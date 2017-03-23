@@ -1,0 +1,6 @@
+1、overflow：hidden无法剪裁溢出的内容
+产生条件：一个盒子（元素）中子元素使用相对定位，给父级overflow：hidden无效
+解决办法：给父级添加一个相对定位或绝对定位。
+
+2、overflow-x: hidden;或overflow-y: hidden;显示为xy轴全部剪裁
+解决办法：overflow-x: hidden;overflow-y: scroll;或overflow-y: hidden;overflow-x: scroll;
