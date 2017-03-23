@@ -1,0 +1,4 @@
+img在ie6/7下有3个问题：
+1、img在ie6/7下默认有白色边框，border:none;解决
+2、img下方产生1px的间距，display:block;vertical-align:middle;解决
+3、img使得左右文字垂直位置发生改变，vertical-align:middle;解决
