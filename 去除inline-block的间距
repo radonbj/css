@@ -1,0 +1,11 @@
+inline-block元素的元素间会存在间距，而且这个间距在各浏览器间还不是一致的。
+例如如下的布局:
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+margin：通过给li设置margin-left的值为负，但是这种方法在有些情况不是太好使，所以不推荐。
+font-size:给ul设置font-size:0px，li设置font-size:12px;这种方法ie7下会有1px的间距，如果不需要考虑ie7可以使用。由于chrome的最小字体为12px，因此还需要-webkit-text-size-adjust:none;
+letter-spacing:给ul设置letter-spacing:-1em;,li设置letter-spacing:0;
+word-spacing：给ul设置word-spacing:-1em;,li设置word-spacing:0;
