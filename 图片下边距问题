@@ -1,0 +1,7 @@
+问题原因：<img>的display为inline,图片默认的垂直对齐方式是基线，而基线的位置是与字体相关。不同的 font-size 应该也会影响到这个空隙的大小。
+解决办法：
+        一：由于是因为行内元素的垂直对其方式导致的问题，因此最好的方法设置vertical-align，值最好为top或bottom。
+        二：还是改变<img >元素的对其方式，不过方法有点委婉，将<img>的display:block;经测试flex、flow-root、grid、table、table-caption、table-cell、
+            table-column、table-column-group、table-footer-group、table-header-group、table-row、table-row-group都可以实现,但是这都有副作用，最
+            好的还是vertical-align。
+        三：虽然vertical-align决定对其方式，但是font-size决定空间的大小，那么将font-size：0;将空清除掉也是可以的，但是副作用还是很明显
