@@ -1,0 +1,57 @@
+两栏布局
+方法一：
+.main {
+            overflow: auto;
+        }
+        
+        .box {
+            margin-left: 100px;
+            background: #ccc;
+            height: 300px;
+        }
+        
+        .center {
+            width: 100%;
+            float: left;
+            height: 300px;
+        }
+        
+        .aside {
+            height: 300px;
+            width: 100px;
+            background: blue;
+            float: left;
+            margin-right: -100px;
+        }
+     <div class="main">
+        <div class="aside"></div>
+        <div class="center">
+            <div class="box">菜单块marginright-100为内容区留出浮动空间</div>
+        </div>
+    </div>
+    
+    
+    方法二：
+    .centent {
+            overflow: auto;
+        }
+        
+        .aside {
+            margin-bottom: -3000px;
+            padding-bottom: 3000px;
+            width: 100px;
+            overflow: auto;
+            float: left;
+            background: blue;
+        }
+        
+        .centenr {
+            height: 300px;
+            margin: 0 0 0 100px;
+            background: #ccc;
+        }
+        
+     <div class="centent">
+        <div class="aside"> </div>
+        <div class="centenr">菜单域浮动，内容区overflow，通过margin负值、padding正值让两个区域等高</div>
+    </div>
